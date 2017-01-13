@@ -3,17 +3,14 @@ import log from '../src/index';
 describe('log()', () => {
   it('should it works', () => {
       class A {
-        constructor() {
-
-        }
-
+        constructor() {}
         @log
         get(a,b,c) {
-          return a + b;
+          return 3;
         }
       }
 
       const a = new A();
-      expect(a.get(1,2)).toBe(3);
+      expect(a.get({a: 2}, 2)).toBe(3);
   });
 });
