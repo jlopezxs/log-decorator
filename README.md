@@ -4,12 +4,12 @@
 
 ## Requirements and Use
 
-```
+```bash
 npm install log-decorator --save
 ```
 
 ### Use
-```
+```javascript
 import log from 'log-decorator';
 
 class A {
@@ -22,7 +22,7 @@ class A {
 ```
 
 ### Output
-```
-get method called with [ { a: 2 }, 2 ]
-get method returns 3
+```bash
+$ get method called with [ { a: 2 }, 2 ]
+$ get method returns 3
 ```
