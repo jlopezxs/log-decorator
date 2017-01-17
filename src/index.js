@@ -1,4 +1,4 @@
-const chalk = require('chalk');
+const colors = require('colors');
 const log = console.log;
 
 export default function logDecorator(target, key, descriptor) {
@@ -6,9 +6,9 @@ export default function logDecorator(target, key, descriptor) {
 
   const func = descriptor.value;
   descriptor.value = function wrapper(...args) {
-    log(`${chalk.blue(key)} method ${chalk.gray('called with')}`, args);
+    log(`${colors.cyan(key)} method ${colors.gray('called with')}`, args);
     const result = func.call(this, ...args);
-    log(`${chalk.blue(key)} method ${chalk.gray('returns')}`, result);
+    log(`${colors.cyan(key)} method ${colors.gray('returns')}`, result);
     return result;
   };
   return descriptor;
