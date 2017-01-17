@@ -11,6 +11,11 @@
     "lib",
     "index.js"
   ],
+  "keywords": [
+   "es6",
+   "log",
+   "decorator"
+ ],
   "scripts": {
     "lint": "eslint src/**/*.js spec/**/*.spec.js",
     "test": "jasmine",
