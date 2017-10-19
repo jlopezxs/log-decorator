@@ -1,5 +1,7 @@
 ## log-decorator
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jlopezxs/log-decorator.svg)](https://greenkeeper.io/)
+
 > Log decorator
 
 ## Requirements and Use
