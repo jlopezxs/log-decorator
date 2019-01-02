@@ -20,7 +20,7 @@
     "lint": "eslint src/**/*.js spec/**/*.spec.js",
     "test": "jasmine",
     "prebuild": "npm run test",
-    "build": "rm -rf lib && babel src -d lib --source-maps",
+    "build": "rimraf lib && babel src -d lib --source-maps",
     "prerelease": "npm run build",
     "release": "npm version -m \"New version: %s\"",
     "postrelease": "npm run push && npm publish",
@@ -36,6 +36,7 @@
     "eslint-plugin-import": "^1.9.2",
     "eslint-plugin-jasmine": "^1.8.1",
     "jasmine": "^2.5.3"
+    "rimraf": "^2.6.2"
   },
   "repository": {
     "type": "git",
