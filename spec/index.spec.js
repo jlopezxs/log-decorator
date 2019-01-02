@@ -1,16 +1,27 @@
 import log from '../src/index';
+const intercept = require('intercept-stdout');
+
 
 describe('log()', () => {
-  it('should it works', () => {
-      class A {
-        constructor() {}
-        @log
-        get(a,b,c) {
-          return 3;
-        }
-      }
+  class A {
+    @log
+    get(a, b, c) {
+      return a + b;
+    }
+  }
 
-      const a = new A();
-      expect(a.get({a: 2}, 2)).toBe(3);
+  const a = new A();
+  let logged;
+  intercept(stdout => {
+    logged += stdout;
+  });
+  const returned = a.get(1, 2, { a: 2 });
+
+  it('should log arguments to the console', () => {
+    expect(logged).toContain('[ 1, 2, { a: 2 } ]');
+  });
+
+  it('should log the return value to the console', () => {
+    expect(logged).toContain(returned);
   });
 });
