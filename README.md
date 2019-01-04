@@ -1,11 +1,21 @@
 ## log-decorator
 
-> Log decorator
+> Logging decorator for Node and Browsers
 
 ## Requirements and Use
 
 ```bash
 npm install log-decorator --save
+```
+
+### With Babel 7
+
+***babel.config.js***
+```js
+const plugins = [
+    ['@babel/plugin-proposal-decorators', { 'legacy': true }]
+]
+module.exports = { plugins }
 ```
 
 ### Use
@@ -19,6 +29,8 @@ class A {
     return 3;
   }
 }
+
+new A().get({ a: 2 }, 2)
 ```
 
 ### Output
